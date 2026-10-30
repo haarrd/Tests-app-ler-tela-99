@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RideCheck</string>
+    <string name="service_desc">Lê a oferta de corrida do app 99 e mostra se ela compensa. Só lê, não clica em nada.</string>
+</resources>

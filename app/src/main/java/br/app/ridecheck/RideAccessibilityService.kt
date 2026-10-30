@@ -89,11 +89,14 @@ class RideAccessibilityService : AccessibilityService() {
         if (n == null || depth > 40) return
         val t = (n.text ?: n.contentDescription)?.toString()?.trim()
         if (!t.isNullOrEmpty()) out += t
-        dump?.append("  ".repeat(depth))
-            ?.append(n.className).append(" | text=").append(n.text)
-            ?.append(" | desc=").append(n.contentDescription)
-            ?.append(" | id=").append(n.viewIdResourceName)
-            ?.append('\n')
+        if (dump != null) {
+            dump.append("  ".repeat(depth))
+                .append(n.className)
+                .append(" | text=").append(n.text)
+                .append(" | desc=").append(n.contentDescription)
+                .append(" | id=").append(n.viewIdResourceName)
+                .append('\n')
+        }
         for (i in 0 until n.childCount) collect(n.getChild(i), out, depth + 1, dump)
     }
 
